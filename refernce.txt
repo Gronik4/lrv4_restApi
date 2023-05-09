@@ -1,0 +1,31 @@
+Все домашки по Laravel: https://github.com/netology-code/lrv-homeworks/tree/lrv-3/
+Дз №2 по блоку Laravel: https://github.com/netology-code/lrv-homeworks/tree/lrv-3/002-basics
+ДЗ №1: https://github.com/netology-code/lrv-homeworks/tree/lrv-3/001-intro
+ДЗ №3: https://github.com/netology-code/lrv-homeworks/blob/lrv-3/003-middleware
+ДЗ №4: https://github.com/netology-code/lrv-homeworks/tree/lrv-3/004-rest
+
+Официальная документация:https://laravel.com/
+На русском:https://laravel.su/
+На русском, но хуже:https://laravel.ru/
+
+Замечания к ДЗ:
+  1. Ссылка "Цепочка обязанностей" - не работает.
+  2. Повторяю все действия по лекции, с единственным исключением вместо поля "is_admin" у меня поле "is_user".
+       Все нормально пока не дохожу до php artisan migrate время на записи 7:59.
+       После этой команды в терминале ошибка- " SQLSTATE[HY000] [2002] Подключение не установлено, т.к. конечный компьютер
+        отверг запрос на подключение (Connection: mysql, SQL: select * from information_schema.tables where table_schema =
+        laravel and table_name = migrations and table_type = 'BASE TABLE').
+        Лечится: Проект должен быть подготовлен, с устанвленной БД и всеми настройками.
+  3. Общее замечание ко всем лекциям курса: Ни где не дается точка отсчета. То есть: ни где не сказано в каком состоянии д.б. 
+      проект, что там должно быть установлено, в каком файле пишем приводимый код. Особенно касается "продвинутый Js" - где 
+      рассказывается об установке рабочего окружения, "продвинутый JS в браузуре". И "Laravel" - где все последующие изменения 
+      лучьше бы делать в одном проекте постепенно его дополняя.
+
+      <!--@foreach($dbcontent as $item)
+  <h4 class="text-center">{{$item->title}}</h4>
+  <p class="text-center">name: {{$item->name}}</p>
+  <p class="text-center">password: *********</p>
+  <p class="text-center">email: {{$item->email}} phone: {{$item-> phone}}</p>
+  <p class="text-center">created_at: {{$item->created_at}}</p>
+  <p class="text-center">updated_at: {{$item->updated_at}}</p>
+  @endforeach-->

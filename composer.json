@@ -1,0 +1,17 @@
+{
+    "name": "gronw/lrv4_rest-api",
+    "description": "фреймворк Laravel - REST API.",
+    "autoload": {
+        "psr-4": {
+            "Gronw\\Lrv4RestApi\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Gronik4",
+            "email": "golegni@yandex.ru"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
