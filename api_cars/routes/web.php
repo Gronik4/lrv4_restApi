@@ -2,10 +2,9 @@
 
 use App\Http\Controllers\CarsController;
 use App\Http\Controllers\HomeController;
-use Illuminate\Support\Facades\App;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Http;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,8 +20,12 @@ use Illuminate\Support\Facades\Http;
 Route::get('/', function () { return view('welcome'); });
 Route::group(['middleware'=> 'auth'], function() {
   Route::get('/add_cars', [CarsController::class, 'create']);
+  Route::get('/cars_list', [CarsController::class, 'index']);
+  Route::post('/add_cars', [CarsController::class, 'store']);
 });
 Auth::routes();
-Route::get('/cars_list', [CarsController::class, 'index']);
-Route::post('/add_cars', [CarsController::class, 'store']);
+Route::group(['middleware'=> 'auth:sanctum'], function() {
+  Route::get('/api/user', [ProfileController::class, 'index']);
+});
+
 Route::get('/home', [HomeController::class, 'index'])->name('home');

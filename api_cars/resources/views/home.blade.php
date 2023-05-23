@@ -19,6 +19,7 @@
             </div>
             <a href="/add_cars"><button class="m-1 btn btn-info">Add cars</button></a>
             <a href="/cars_list"><button class="m-1 btn btn-info">Show cars list</button></a>
+            <a href="/api/user"><button class="m-1 btn btn-info">Show user data</button></a>
         </div>
     </div>
 </div>

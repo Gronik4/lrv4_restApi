@@ -10,8 +10,8 @@
 <body>
 <h2 class="text-center">{{$addCars}}</h2>
   <div class="container">
-    <form action="" method="post">
-      {{ csrf_field() }}
+    <form action="{{ route('cars.store')}} " method="post">
+      @csrf
       <div class="form-grup mb-3">
         <label for="brand">Бренд авто</label>
         <input type="text" name="brand" placeholder="Бренд авто" id="brand" class="form-control" required>

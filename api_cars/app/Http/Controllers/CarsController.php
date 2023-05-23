@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cars;
 use App\Http\Requests\CarsRequest;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\DB;
 use SebastianBergmann\CodeCoverage\Report\Xml\Project;
 
@@ -14,10 +15,11 @@ class CarsController extends Controller
      */
     public function index()
     {
-        $objList = Cars::paginate(10);
+        //$objList = Cars::paginate(10);
+        $objList = Cars::all();
         return view('/cars_list', [
             'listCars'=> $objList,
-            'listHead'=> 'В БД cars:'
+            'listHead'=> 'Содержимое таблицы cars:'
         ]);
     }
     /**
@@ -31,25 +33,16 @@ class CarsController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(CarsRequest $request)
+    public function store(CarsRequest $request): RedirectResponse
     {
-        $brand = $request-> brand;
-        $model = $request-> model;
-        $price = $request-> price;
         //$valid = Cars::created($request-> validate());
         
-            DB::table('cars')->insert([
-                'brand'=> $brand,
-                'model'=> $model,
-                'price'=> $price
+            Cars::create([
+                'brand'=> $request-> brand,
+                'model'=> $request-> model,
+                'price'=> $request-> price
             ]);
             return redirect('/cars_list');
-        
-        /*$list = new Project('1');
-        $list-> brand = request('brand');
-        $list-> model = request('model');
-        $list-> save();
-        return $request-> all();*/
     }
 
     /**
